@@ -1,0 +1,109 @@
+:root {
+  --bg: #1e1e1e;
+  --fg: #d4d4d4;
+  --tag: #569cd6;
+  --attr: #9cdcfe;
+  --val: #ce9178;
+  --punct: #808080;
+  --cm: #6a9955;
+  --doctype: #808080;
+  --text: #d4d4d4;
+  --bar-bg: #2d2d2d;
+  --border: #3c3c3c;
+  --btn-bg: #3c3c3c;
+  --btn-fg: #d4d4d4;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --fg: #1e1e1e;
+    --tag: #0000ff;
+    --attr: #e50000;
+    --val: #a31515;
+    --punct: #555555;
+    --cm: #008000;
+    --doctype: #555555;
+    --text: #1e1e1e;
+    --bar-bg: #f3f3f3;
+    --border: #d0d0d0;
+    --btn-bg: #e6e6e6;
+    --btn-fg: #1e1e1e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, Consolas, "Cascadia Mono", monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: var(--bar-bg);
+  border-bottom: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+
+button {
+  font: inherit;
+  font-size: 12px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(1.15); }
+
+.auto {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 4px;
+}
+
+#status {
+  margin-left: auto;
+  font-size: 11px;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+pre {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre;
+  overflow: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.tag { color: var(--tag); font-weight: 600; }
+.attr { color: var(--attr); }
+.val { color: var(--val); }
+.punct { color: var(--punct); }
+.cm { color: var(--cm); font-style: italic; }
+.doctype { color: var(--doctype); }
+.text { color: var(--text); }
